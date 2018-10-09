@@ -1,5 +1,7 @@
 module.exports = {
-    Grocery: require("./Grocery")
-}
+	Fruit: require('./Fruit'),
+	Sweets: require('./Sweets')
+};
 
-// export * from ("./Grocery")
+//export * from ("./Fruit")
+//export * from ("./Sweets")
