@@ -11,7 +11,7 @@ const App = (props) => {
 			<div className="col-md-4">
 				<img className="imgPic marginSpace" key={item.id} alt={item.item} src={item.image} />
 				<h5 className="text-center">
-					{item.item} {item.quantity}
+					Name: {item.item} Amount: {item.quantity}
 				</h5>
 			</div>
 		);
