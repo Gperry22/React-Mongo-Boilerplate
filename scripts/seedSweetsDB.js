@@ -24,12 +24,12 @@ const itemSeed = [
 	{
 		item: 'Butterfingers',
 		quantity: '14',
-		image: './images/butterginger.jpg'
+		image: './images/butterfinger.jpg'
 	},
 	{
 		item: 'Sour Patch Kids',
 		quantity: '221',
-		image: './images/sou-patch-kids.jpg'
+		image: './images/sour-patch-kids.jpg'
 	}
 ];
 
