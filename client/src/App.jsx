@@ -34,6 +34,7 @@ class App extends Component {
 					items={this.state}
 					handleClick={this.updateAddQuantity}
 					handleMinusClick={this.updateMinusQuantity}
+					handleDeleteClick={this.deleteFromStore}
 					 />
 				</div>
 				<div className="col-md-3">
@@ -98,6 +99,16 @@ class App extends Component {
 		}
 	}
 
+	deleteFromStore = (id,itemType, event) => {
+		event.preventDefault()
+		if(itemType === "Fruit"){
+			this.deleteFruit(id)
+		}
+		else if (itemType === "Sweet"){
+			this.deleteSweet(id)
+		}
+	};
+
 
 //============================== Fruit Functions  Start ==========================================================
 
@@ -135,29 +146,39 @@ class App extends Component {
 		.catch(err => console.log(err))
 	};
 
-		//adds fruit quantity
-		addFruitQuantity = (id,quantity) => {		
-			let newQuantity = quantity += 1;
-			const data = {
-				fruitID: id,
-				quantity: newQuantity			
-			}
-			FruitAPI.addFruit(data)
-			.then(this.getFruits())
-			.catch(err => console.log(err))
+	//adds fruit quantity
+	addFruitQuantity = (id,quantity) => {		
+		let newQuantity = quantity += 1;
+		const data = {
+			fruitID: id,
+			quantity: newQuantity			
 		}
-	
-		//minus fruit quantity
-		minusFruitQuantity = (id,quantity) => {
-			let newQuantity = quantity -= 1;
-			const data = {
-				fruitID: id,
-				quantity: newQuantity			
-			}
-			FruitAPI.minusFruit(data)
-			.then(this.getFruits())
-			.catch(err => console.log(err))
+		FruitAPI.addFruit(data)
+		.then(this.getFruits())
+		.catch(err => console.log(err))
+	};
+
+	//minus fruit quantity
+	minusFruitQuantity = (id,quantity) => {
+		let newQuantity = quantity -= 1;
+		const data = {
+			fruitID: id,
+			quantity: newQuantity			
 		}
+		FruitAPI.minusFruit(data)
+		.then(this.getFruits())
+		.catch(err => console.log(err))
+	};
+
+	//deletes fruits
+	deleteFruit = (id) => {		
+		const data = {
+			fruitID: id
+		}		
+		FruitAPI.deleteFruit(data)
+		.then(this.getFruits())
+		.catch(err => console.log(err))
+	};
 
 
 
@@ -210,7 +231,7 @@ class App extends Component {
 		.then(this.getFruits())
 		.catch(err => console.log(err))
 		
-	}
+	};
 
 	//minus sweets quantity
 	minusSweetsQuantity = (id,quantity) => {
@@ -220,6 +241,16 @@ class App extends Component {
 			quantity: newQuantity			
 		}
 		SweetAPI.minusSweet(data)
+		.then(this.getFruits())
+		.catch(err => console.log(err))
+	};
+
+	//deletes sweets
+	deleteSweet = (id) => {
+		const data = {
+			sweetID: id
+		}
+		SweetAPI.deleteSweet(data)
 		.then(this.getFruits())
 		.catch(err => console.log(err))
 	}

@@ -13,5 +13,10 @@ export default {
     minusSweet: data => {
         return axios.put('/api/sweets/minus', data)
     },
+    deleteSweet: data => {
+        return axios.post('/api/sweets/delete', data)
+    }
 	
 };
+
+

@@ -13,5 +13,8 @@ export default {
     minusFruit: data => {
         return axios.put('/api/fruit/minus', data)
     },
+    deleteFruit: data => {
+        return axios.post('/api/fruit/delete', data)
+    }
 	
 };

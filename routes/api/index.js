@@ -11,6 +11,6 @@ const sweetRoutes = require('./sweets');
 
 //now the route is /api/fruit  and /api/sweets
 router.use('/fruit', fruitRoutes);
-router.use('/sweets', sweetsRoutes);
+router.use('/sweets', sweetRoutes);
 
 module.exports = router;
