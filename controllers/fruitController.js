@@ -13,5 +13,12 @@ module.exports = {
 			.catch((err) => {
 				res.json(err);
 			});
+	},
+
+	createFruit: (req,res) => {
+		db.Sweets
+		.create(req.body)
+		.then(fruit => res.json(fruit))
+		.catch(err => res.json(err))
 	}
 };

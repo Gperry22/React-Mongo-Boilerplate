@@ -13,7 +13,8 @@ const itemImages = (props) => {
 					 Available: {item.quantity}
 				</h5>
 				<img className="imgPic marginSpace"  alt={item.item} src={item.image} />
-				<Button color="primary" size="lg" onClick={event => props.handleClick(item._id, event)}>Add to Cart</Button>
+				<Button color="primary" size="lg" onClick={event => props.handleClick(item._id,item.quantity,item.type, event)}>+</Button>
+				<Button color="danger" size="lg" onClick={event => props.handleMinusClick(item._id,item.quantity,item.type, event)}>-</Button>
 			</div>
 		);
 	}))

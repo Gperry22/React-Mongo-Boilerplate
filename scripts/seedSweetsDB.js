@@ -9,26 +9,31 @@ const itemSeed = [
 	{
 		item: 'Gummy Bears',
 		quantity: '54',
+		type: 'Sweet',
 		image: './images/gummies.jpg'
 	},
 	{
 		item: 'Corn Candy',
 		quantity: '69',
+		type: 'Sweet',
 		image: './images/corn-candy.jpg'
 	},
 	{
 		item: 'M&Ms',
 		quantity: '888',
+		type: 'Sweet',
 		image: './images/mms.jpg'
 	},
 	{
 		item: 'Butterfingers',
 		quantity: '14',
+		type: 'Sweet',
 		image: './images/butterfinger.jpg'
 	},
 	{
 		item: 'Sour Patch Kids',
 		quantity: '221',
+		type: 'Sweet',
 		image: './images/sour-patch-kids.jpg'
 	}
 ];

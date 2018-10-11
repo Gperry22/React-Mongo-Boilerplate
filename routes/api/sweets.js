@@ -6,3 +6,6 @@ module.exports = router;
 
 // /api/sweets/
 router.route('/').get(sweetsController.findAll);
+
+// /api/sweets/:data route to create sweets
+router.route('/:data').post(sweetsController.createSweet);

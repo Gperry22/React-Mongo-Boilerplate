@@ -25,27 +25,74 @@
 
 const router = require('express').Router();
 const db = require('../models');
+const mongoose = require("mongoose");
+
 
 module.exports = router;
+//route to create Fruit
+router.post('/api/fruit',(req,res) => {
+	db.Fruit.create(req.body)
+	.then(fruit => res.json(fruit))
+	.catch(err => res.json(err))
+});
 
+//route to get Fruits
 router.get('/api/fruit', (req, res) => {
 	db.Fruit
 		.find({})
-		.then((fruits) => {
-			res.json(fruits);
-		})
-		.catch((err) => {
-			res.json(err);
-		});
+		.then((fruits) => {res.json(fruits)})
+		.catch((err) => {res.json(err)});
 });
 
+//route to add Fruits
+router.put('/api/fruit/add', (req,res) =>{
+	let id = mongoose.Types.ObjectId(req.body.fruitID);
+	db.Fruit.findOneAndUpdate(
+		{_id: id}, {$set: { quantity: req.body.quantity }})
+		.then((fruit) => {res.json(fruit)})
+		.catch((err) => {res.json(err)})
+});
+
+//route to minus Fruits
+router.put('/api/fruit/minus', (req,res) =>{
+	let id = mongoose.Types.ObjectId(req.body.fruitID);	
+	db.Fruit.findOneAndUpdate(
+		{_id: id}, {$set: { quantity: req.body.quantity }})
+		.then((fruit) => {res.json(fruit)})
+		.catch((err) => {res.json(err)})
+});
+
+
+// route to create Sweet
+router.post('/api/sweets', (req,res) => {
+	db.Sweets.create(req.body)
+	.then(sweet => {res.json(sweet)})
+	.catch((err) => {res.json(err)})
+});
+// route to get Sweets
 router.get('/api/sweets', (req, res) => {
 	db.Sweets
 		.find({})
-		.then((sweets) => {
-			res.json(sweets);
-		})
-		.catch((err) => {
-			res.json(err);
-		});
+		.then((sweet) => {res.json(sweet)})
+		.catch((err) => {res.json(err)});
 });
+
+//route to add Sweets
+router.put('/api/sweets/add', (req,res) =>{
+	let id = mongoose.Types.ObjectId(req.body.sweetID);	
+	db.Sweets.findOneAndUpdate(
+		{_id: id}, {$set: { quantity: req.body.quantity }})
+		.then((sweet) => {res.json(sweet)})
+		.catch((err) => {res.json(err)})
+});
+
+//route to minus Sweets
+router.put('/api/sweets/minus', (req,res) =>{
+	let id = mongoose.Types.ObjectId(req.body.sweetID);
+	db.Sweets.findOneAndUpdate(
+		{_id: id}, {$set: { quantity: req.body.quantity }})
+		.then((sweet) => {res.json(sweet)})
+		.catch((err) => {res.json(err)})
+});
+
+

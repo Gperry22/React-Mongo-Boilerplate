@@ -13,6 +13,10 @@ const fruitSchema = new Schema({
 		type: Number,
 		required: true
 	},
+	type: {
+		type: String,
+		required: true
+	},
 	image: {
 		type: String,
 		required: true
