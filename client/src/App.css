@@ -1,8 +1,26 @@
 .imgPic {
-    width: 230px;
-    height: 200px;
+    width: 270px;
+    height: 220px;
 }
 .marginSpace {
     margin: 15px;
     border: 1px solid black;
+}
+
+.btn-space {
+    /* margin-left: auto; */
+    margin-right: 9px;
+    margin-bottom: 30px;
+  }
+
+.marginLeft {
+    margin-left: -15px;
+}
+
+.marginRigh {
+    margin-left: 30px;
+}
+
+.borderLine {
+    border: 1px dashed black;
 }

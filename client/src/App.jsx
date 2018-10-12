@@ -29,7 +29,7 @@ class App extends Component {
 				<div>
 					<h1 className="text-center">Gabe's Supersweets</h1>
 				</div>
-				<div className="col-md-9">
+				<div className="col-md-8 borderLine">
 					<ItemImages
 					items={this.state}
 					handleClick={this.updateAddQuantity}
@@ -37,7 +37,7 @@ class App extends Component {
 					handleDeleteClick={this.deleteFromStore}
 					 />
 				</div>
-				<div className="col-md-3">
+				<div className="offset-md-1 col-md-3 borderLine">
 					<CreateItem 
 					handleChange={this.onHandleChange}
 					value={this.state}
