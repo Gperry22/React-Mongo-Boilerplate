@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === "production") {
 }
 else {
 	databaseToUse = 'mongodb://localhost/reactBoilerplate';
+	console.log("DEVELOPMENT")
 }
 
 
