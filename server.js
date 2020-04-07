@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://gabe:a123456@ds133601.mlab.com:33601/heroku_nf0ztkqg" ||'mongodb://localhost/reactBoilerplate';
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://gabe:a123456@ds133601.mlab.com:33601/heroku_nf0ztkqg" 
 
 
 mongoose.Promise = global.Promise;
