@@ -9,11 +9,14 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static('client/build'));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static('client/build'));
+}
 
 app.use(routes);
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/reactBoilerplate';
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://gabe:a123456@ds133601.mlab.com:33601/heroku_nf0ztkqg" ||'mongodb://localhost/reactBoilerplate';
+
 
 mongoose.Promise = global.Promise;
 
