@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.use(routes);
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://gabe:a123456@ds133601.mlab.com:33601/heroku_nf0ztkqg"
+const MONGODB_URI = "mongodb://gabe:a123456@ds133601.mlab.com:33601/heroku_nf0ztkqg"
 
 
 mongoose.Promise = global.Promise;
