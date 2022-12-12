@@ -19,7 +19,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "mongoose": "^5.3.2"
   },
    "proxy": "https://localhost:3001"
